@@ -362,6 +362,17 @@ define Device/tplink_cpe610-v2
 endef
 TARGET_DEVICES += tplink_cpe610-v2
 
+define Device/tplink_eap110-outdoor-v3
+  $(Device/tplink-safeloader-okli)
+  SOC := qca9533
+  IMAGE_SIZE := 7680k
+  DEVICE_MODEL := EAP110-Outdoor
+  DEVICE_VARIANT := v3
+  TPLINK_BOARD_ID := EAP110-OUTDOOR-V3
+  KERNEL := kernel-bin | append-dtb | lzma | loader-kernel
+endef
+TARGET_DEVICES += tplink_eap110-outdoor-v3
+
 define Device/tplink-eap2x5
   $(Device/tplink-safeloader)
   LOADER_TYPE := elf
